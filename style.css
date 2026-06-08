@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    /* MEMBUAT SUSUNAN DARI ATAS KE BAWAH */
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    font-family: Meslo LG M for Powerline, Menlo, Monaco, Consolas, "Courier New", monospace;
+    color:green;
+    text-align: center;
+}
+p{
+    font-family: Meslo LG M for Powerline, Menlo, Monaco, Consolas, "Courier New", monospace;
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+.btn-hi {
+    background-color: #1b3d2f; /* Hijau Gelap */
+    color: #f5f5f0;            /* Putih Tulang */
+    padding: 10px 25px;        /* UKURAN DIKECILKAN AGAR SEDANG */
+    font-size: 1rem;           /* Ukuran font disesuaikan */
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;       /* Membuat bentuk oval sempurna */
+    cursor: pointer;
+    box-shadow: 0 4px #0d1f18; /* Efek Timbul disesuaikan */
+    transition: all 0.1s ease;
+}
+.btn-hi:active {
+    box-shadow: 0 1px #0d1f18;
+    transform: translateY(3px);
+}
+
+.btn-hi:hover {
+    transform: translateY(-4px);      /* MENAIKKAN TOMBOL KE ATAS SEJAUH 4 PIXEL */
+    box-shadow: 0 10px #0d1f18;  
+}
+/* Kelas tambahan untuk mengubah tombol menjadi Pink Soft setelah diklik */
+.btn-hi.thank-you-state {
+    background-color: #ffb6c1; /* Pink Soft (Light Pink) */
+    color: #ffffff;            /* Tulisan Putih Bersih */
+    box-shadow: 0 4px #db939e; /* Efek timbul warna pink gelap */
+    cursor: default;           /* Mengubah kursor panah biasa */
+    animation: fadeIn 0.8s ease forwards; /* Efek Muncul Memudar */
+}
+/* Animasi Muncul Memudar (Fade In) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Mulai dari agak kecil */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);   /* Kembali ke ukuran normal */
+    }
+}
+.heart-particle {
+    position: absolute;
+    pointer-events: none;
+    font-size: 24px;
+    animation: explode 1s ease-out forwards;
+}
+/* Animasi kembang api memancar keluar dan menghilang */
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
